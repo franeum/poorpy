@@ -1,0 +1,5 @@
+#!/bin/bash
+
+flex $1.l
+bison -d $1.y
+gcc lex.yy.c $1.tab.c -o $1 -I/Library/Frameworks/Python.framework/Versions/3.9/include/python3.9 -L/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/config-3.9-darwin -ldl -framework CoreFoundation -Wno-unused-result -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -fwrapv -O3 -Wall -arch x86_64 -g -lpython3.9
